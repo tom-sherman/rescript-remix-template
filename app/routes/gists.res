@@ -36,7 +36,9 @@ let default = () => {
 
   <ul>
     {gists
-    ->Js.Array2.map(gist => <li> <a href={gist.html_url}> {gist.id->React.string} </a> </li>)
+    ->Js.Array2.map(gist =>
+      <li key={gist.id}> <a href={gist.html_url}> {gist.id->React.string} </a> </li>
+    )
     ->React.array}
   </ul>
 }

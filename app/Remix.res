@@ -70,3 +70,5 @@ module Form = {
 @module("remix") external redirect: string => Webapi.Fetch.Response.t = "redirect"
 
 @module("remix") external useBeforeUnload: (@uncurry unit => unit) => unit = "useBeforeUnload"
+
+@module("remix") external useLoaderData: unit => 'a = "useLoaderData"

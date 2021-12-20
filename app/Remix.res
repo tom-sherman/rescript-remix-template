@@ -58,7 +58,7 @@ module Form = {
   external make: (
     ~method: [#get | #post | #put | #patch | #delete]=?,
     ~action: string=?,
-    ~encType: string=?,
+    ~encType: [#"application/x-www-form-urlencoded" | #"multipart/form-data"]=?,
     ~reloadDocument: bool=?,
     ~replace: bool=?,
     ~onSubmit: @uncurry ReactEvent.Form.t => unit=?,

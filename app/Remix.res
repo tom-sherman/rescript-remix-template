@@ -64,3 +64,7 @@ module Form = {
     ~onSubmit: @uncurry ReactEvent.Form.t => unit=?,
   ) => React.element = "Form"
 }
+
+@module("remix") external json: {..} => Webapi.Fetch.Response.t = "json"
+
+@module("remix") external redirect: string => Webapi.Fetch.Response.t = "redirect"

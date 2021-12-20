@@ -14,6 +14,7 @@ let default = () =>
     </head>
     <body>
       <Remix.Outlet />
+      <Remix.ScrollRestoration />
       <Remix.Scripts />
       {if Remix.process["env"]["NODE_ENV"] === "development" {
         <Remix.LiveReload />

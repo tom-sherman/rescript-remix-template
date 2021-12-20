@@ -26,6 +26,11 @@ module Outlet = {
   external make: (~context: 'a=?) => React.element = "Outlet"
 }
 
+module ScrollRestoration = {
+  @module("remix") @react.component
+  external make: unit => React.element = "ScrollRestoration"
+}
+
 module Scripts = {
   // TODO: Find a way to add dom <script> props (or all domProps if that's not possible)
   @module("remix") @react.component

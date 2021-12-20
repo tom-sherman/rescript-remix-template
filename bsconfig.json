@@ -15,7 +15,8 @@
   },
   "bs-dependencies": [
     "@rescript/react",
-    "rescript-webapi"
+    "rescript-webapi",
+    "@ryyppy/rescript-promise"
   ],
   "warnings": {
     "error": "+101"

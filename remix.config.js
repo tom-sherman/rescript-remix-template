@@ -7,5 +7,6 @@ module.exports = {
   publicPath: "/build/",
   serverBuildDirectory: "build",
   devServerPort: 8002,
-  ignoredRouteFiles: [".*", "*.res"]
+  ignoredRouteFiles: [".*", "*.res"],
+  transpileModules: ["rescript"]
 };

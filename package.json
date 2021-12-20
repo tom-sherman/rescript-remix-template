@@ -7,7 +7,7 @@
     "build": "rescript build && remix build",
     "dev:remix": "remix dev",
     "dev:rescript": "rescript build -w",
-    "postinstall": "remix setup node",
+    "postinstall": "patch-package && remix setup node",
     "start": "remix-serve build"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^1.1.1",
+    "patch-package": "^6.4.7",
     "rescript": "^9.1.4"
   },
   "engines": {

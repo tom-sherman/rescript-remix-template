@@ -1,4 +1,4 @@
-# Remix Rescript Example
+# ReScript Remix Template
 
 A WIP ReScript / Remix example app.
 

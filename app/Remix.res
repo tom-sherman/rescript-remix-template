@@ -72,3 +72,40 @@ module Form = {
 @module("remix") external useBeforeUnload: (@uncurry unit => unit) => unit = "useBeforeUnload"
 
 @module("remix") external useLoaderData: unit => 'a = "useLoaderData"
+
+module Cookie = {
+  type t
+
+  @get external name: t => string = "name"
+  @get external isSigned: t => bool = "isSigned"
+  @get @return(undefined_to_opt) external expires: t => option<Js.Date.t> = "isSigned"
+  @send external serialize: (t, {..}) => Promise.t<string> = "serialize"
+  @module("remix") external isCookie: 'a => bool = "isCookie"
+
+  type parseOptions = {decode: string => string}
+  @send external parse: (t, option<string>) => {..} = "parse"
+  @send external parseWithOptions: (t, option<string>, parseOptions) => {..} = "parse"
+}
+
+module CreateCookieOptions = {
+  type t
+
+  @obj
+  external make: (
+    ~decode: string => string=?,
+    ~encode: string => string=?,
+    ~domain: string=?,
+    ~expires: Js.Date.t=?,
+    ~httpOnly: bool=?,
+    ~maxAge: int=?,
+    ~path: string=?,
+    ~sameSite: [#lax | #strict | #none]=?,
+    ~secure: bool=?,
+    ~secrets: array<string>=?,
+    unit,
+  ) => t = ""
+}
+
+@module("remix") external createCookie: string => Cookie.t = "createCookie"
+@module("remix")
+external createCookieWithOptions: (string, CreateCookieOptions.t) => Cookie.t = "createCookie"

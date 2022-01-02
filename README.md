@@ -6,13 +6,13 @@ A starter template for writing Remix apps in [ReScript](https://rescript-lang.or
 
 ```
 npm i
-npm run rescript:dev
+npm run dev:rescript
 ```
 
 And then in another terminal:
 
 ```
-npm run remix:dev
+npm run dev:remix
 ```
 
 ## Building

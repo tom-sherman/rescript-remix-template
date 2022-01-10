@@ -1,3 +1,5 @@
+const { registerRoutes } = require('rescript-remix/registerRoutes');
+
 /**
  * @type {import('@remix-run/dev/config').AppConfig}
  */
@@ -8,5 +10,10 @@ module.exports = {
   serverBuildDirectory: "build",
   devServerPort: 8002,
   ignoredRouteFiles: [".*", "*.res"],
-  transpileModules: ["rescript"]
+  transpileModules: ["rescript"],
+  routes(defineRoutes) {
+    return defineRoutes(route => {
+      registerRoutes(route);
+    });
+  }
 };

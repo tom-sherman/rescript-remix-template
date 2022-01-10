@@ -15,6 +15,7 @@
   },
   "bs-dependencies": [
     "@rescript/react",
+    "rescript-remix",
     "rescript-webapi",
     "@ryyppy/rescript-promise"
   ],
